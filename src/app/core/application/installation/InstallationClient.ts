@@ -13,6 +13,6 @@ export interface InstallationClient {
    *
    * @return installations - observable list of installations
    */
-  getNearestInstallations(latitude: number, longitude: number, distance: number, limit: number): Observable<Installation>;
+  getNearestInstallations(latitude: number, longitude: number, distance: number, limit: number): Observable<Installation[]>;
 
 }
