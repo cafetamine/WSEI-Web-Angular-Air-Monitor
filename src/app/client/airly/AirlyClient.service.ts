@@ -16,6 +16,8 @@ export class AirlyClientService implements InstallationClient {
   }
 
   // TODO refactor on options redo
+  // TODO handle api errors
+  //      - 401 Unauthorized
   public getNearestInstallations(latitude: number, longitude: number, distance: number, limit: number): Observable<Installation[]> {
     return this._http.get<Installation[]>(
       `${this._config.apiUrl}${AirlyClientOptions.GetNearestInstallationsUrl(latitude, longitude, distance, limit)}`, {
