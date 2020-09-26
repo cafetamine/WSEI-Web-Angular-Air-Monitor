@@ -8,11 +8,11 @@ export interface InstallationClient {
    *
    * @param latitude  - of searched area
    * @param longitude - of searched area
-   * @param distance  - radius of searched area around coordinates in KM
+   * @param radius  - radius of searched area around coordinates in KM
    * @param limit     - maximum installations returned
    *
    * @return installations - observable list of installations
    */
-  getNearestInstallations(latitude: number, longitude: number, distance: number, limit: number): Observable<Installation[]>;
+  fetchNearestInstallations(latitude: number, longitude: number, radius: number, limit: number): Observable<Installation[]>;
 
 }
