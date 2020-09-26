@@ -8,4 +8,9 @@ export class AirlyClientOptions {
     return `/installations/nearest?lat=${latitude}&lng=${longitude}&maxDistanceKM=${distance}&maxResults=${limit}`;
   }
 
+  // TODO rethink after measurements added
+  public static GetMeasurementByInstallationId(installationId: number): string {
+    return `/measurements/installation?installationId=${installationId}`;
+  }
+
 }
