@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  client: {
+    airly: {
+      isSecure: true,
+      hostAddress: 'airapi.airly.eu',
+      apiVersion: 'v2',
+      apiKey: 'XXX'
+    }
+  }
 };
 
 /*
