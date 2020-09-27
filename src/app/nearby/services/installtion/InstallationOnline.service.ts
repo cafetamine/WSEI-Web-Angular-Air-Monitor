@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
-import {AirlyClientService} from '../../client/airly/AirlyClient.service';
-import {InstallationFacade} from '../../core/application/installation/InstallationFacade';
-import {GetInstallationsByLocationCommand} from '../../core/application/installation/command/GetInstallationsByLocationCommand';
+import {AirlyClientService} from '../../../client/airly/AirlyClient.service';
+import {InstallationFacade} from '../../../core/application/installation/InstallationFacade';
+import {GetInstallationsByLocationCommand} from '../../../core/application/installation/command/GetInstallationsByLocationCommand';
 import {Observable, of} from 'rxjs';
 import {CoordinatesService} from '../coordinates/Coordinates.service';
 import {flatMap, map} from 'rxjs/internal/operators';
-import {GetInstallationsResult} from '../../core/application/installation/result/GetInstallationsResult';
-import {InstallationError} from '../../core/application/installation/InstallationError';
-import {GetInstallationsNearbyCommand} from '../../core/application/installation/command/GetInstallationsNearbyCommand';
+import {GetInstallationsResult} from '../../../core/application/installation/result/GetInstallationsResult';
+import {InstallationError} from '../../../core/application/installation/InstallationError';
+import {GetInstallationsNearbyCommand} from '../../../core/application/installation/command/GetInstallationsNearbyCommand';
 
 @Injectable({providedIn: 'root'})
 export class InstallationOnlineService implements InstallationFacade {

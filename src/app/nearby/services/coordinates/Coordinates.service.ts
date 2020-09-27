@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {CoordinatesFacade} from '../../core/application/coordinates/CoordinatesFacade';
+import {CoordinatesFacade} from '../../../core/application/coordinates/CoordinatesFacade';
 import {Observable} from 'rxjs';
-import {GetCurrentCoordinatesResult} from '../../core/application/coordinates/result/GetCurrentCoordinatesResult';
-import {CoordinatesError} from '../../core/application/coordinates/CoordinatesError';
+import {GetCurrentCoordinatesResult} from '../../../core/application/coordinates/result/GetCurrentCoordinatesResult';
+import {CoordinatesError} from '../../../core/application/coordinates/CoordinatesError';
 
 @Injectable({providedIn: 'root'})
 export class CoordinatesService implements CoordinatesFacade {
