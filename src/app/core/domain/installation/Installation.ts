@@ -12,4 +12,9 @@ export class Installation {
                      public readonly address: InstallationAddress,
                      public readonly sponsor: InstallationSponsor) { }
 
+  // TODO dto object, put elevation into location
+  public getLocationDisplayString(): string {
+    return `( ${this.location.latitude}, ${this.location.longitude}, ${this.elevation} )`;
+  }
+
 }

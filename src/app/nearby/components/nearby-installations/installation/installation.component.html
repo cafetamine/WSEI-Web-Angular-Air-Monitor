@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li>
+      <p>{{ installation.id }}</p>
+      <p> {{ installation.getLocationDisplayString() }} </p>
+    </li>
+    <li><app-address [address]="installation.address"></app-address></li>
+    <li><app-sponsor [sponsor]="installation.sponsor"></app-sponsor></li>
+  </ul>
+</div>

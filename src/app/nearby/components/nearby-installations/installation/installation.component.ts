@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Installation} from '../../../core/domain/installation/Installation';
+import {Installation} from '../../../../core/domain/installation/Installation';
 
 @Component({
   selector: 'app-installation',
