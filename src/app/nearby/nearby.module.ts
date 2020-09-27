@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {InstallationsComponent} from './components/installations/installations.component';
+import {NearbyInstallationsComponent} from './components/nearby-installations/nearby-installations.component';
 import {routing} from './nearby.routing';
 
 @NgModule({
   declarations: [
-    InstallationsComponent
+    NearbyInstallationsComponent
   ],
   imports: [
     CommonModule,

@@ -10,7 +10,7 @@ export interface InstallationFacade {
    *
    * @param command query search params
    *
-   * @return list of installations found nearby provided location.
+   * @return list of nearby-installations found nearby provided location.
    */
   getInstallationsByLocation(command: GetInstallationsByLocationCommand): Observable<GetInstallationsResult>;
 
@@ -19,7 +19,7 @@ export interface InstallationFacade {
    *
    * @param command command query search params
    *
-   * @return list of installations found nearby internally read location.
+   * @return list of nearby-installations found nearby internally read location.
    */
   getNearbyInstallations(command: GetInstallationsNearbyCommand): Observable<GetInstallationsResult>;
 

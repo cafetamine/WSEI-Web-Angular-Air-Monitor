@@ -6,10 +6,10 @@ import {GetInstallationsResult} from '../../../core/application/installation/res
 
 @Component({
   selector: 'app-installations',
-  templateUrl: './installations.component.html',
-  styleUrls: ['./installations.component.css']
+  templateUrl: './nearby-installations.component.html',
+  styleUrls: ['./nearby-installations.component.css']
 })
-export class InstallationsComponent implements OnInit {
+export class NearbyInstallationsComponent implements OnInit {
 
   public $result: Observable<GetInstallationsResult>;
 
