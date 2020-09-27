@@ -21,29 +21,29 @@ export class MockedInstallationService implements InstallationFacade {
   public getInstallationsByLocation(command: GetInstallationsByLocationCommand): Observable<GetInstallationsResult> {
     return of(GetInstallationsResult.Success([
       new Installation(
-        1,
-        11,
+        8077,
+        220.38,
         true,
-        1,
+        8077,
         new InstallationLocation(
-          11.11,
-          111.111
+          50.062006,
+          19.940984
         ),
         new InstallationAddress(
-          'country1',
-          'city1',
-          'street1',
+          'Poland',
+          'Krakow',
+          'Mikołajska',
           'streetNumber1',
-          'displayAddress11',
-          'displayAddress21'
+          'Krakow',
+          'Mikołajska'
         ),
         new InstallationSponsor(
-          1,
-          'sponsorName1',
-          'description1',
-          'logo1',
-          'link1',
-          `displayName1`
+          489,
+          'Chatham Financial',
+          'Airly Sensor\'s sponsor',
+          'https://cdn.airly.eu/logo/ChathamFinancial_1570109001008_473803190.jpg',
+          'https://crossweb.pl/job/chatham-financial/ ',
+          `Chatham Financial`
         )
       ),
       new Installation(
