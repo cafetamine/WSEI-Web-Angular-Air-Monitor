@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {InstallationOnlineService} from '../../services/installtion/InstallationOnline.service';
+import {GetInstallationsNearbyCommand} from '../../../core/application/installation/command/GetInstallationsNearbyCommand';
+import {Observable} from 'rxjs';
+import {GetInstallationsResult} from '../../../core/application/installation/result/GetInstallationsResult';
 
 @Component({
   selector: 'app-installations',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstallationsComponent implements OnInit {
 
-  constructor() { }
+  public $result: Observable<GetInstallationsResult>;
 
-  ngOnInit(): void {
+  // TODO import by interface
+  public constructor(private readonly _service: InstallationOnlineService) { }
+
+  public ngOnInit(): void {
+    this.$result = this._service.getNearbyInstallations(GetInstallationsNearbyCommand.Create());
   }
 
 }
