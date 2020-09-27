@@ -3,6 +3,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
+import {routing} from './app.routing';
+import {NearbyModule} from './nearby/nearby.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,13 @@ import {AppComponent} from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    routing,
+    NearbyModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
