@@ -1,11 +1,6 @@
 <div *ngIf="$result | async as result">
   <div *ngIf="result.isSuccess">
-    <ul>
-      <li *ngFor="let installation of result.installations;">
-        {{ installation.toString() }}
-        {{ installation.id }}
-      </li>
-    </ul>
+    <app-installation *ngFor="let installation of result.installations;" [installation]="installation"></app-installation>
   </div>
   <!-- TODO [error handling] global -->
   <div *ngIf="!result.isSuccess">
