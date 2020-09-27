@@ -1,6 +1,7 @@
-import {Installation} from '../../domain/installation/Installation';
 import {Observable} from 'rxjs';
-import {GetInstallationByLocationCommand} from './command/GetInstallationByLocationCommand';
+import {GetInstallationsByLocationCommand} from './command/GetInstallationsByLocationCommand';
+import {GetInstallationsResult} from './result/GetInstallationsResult';
+import {GetInstallationsNearbyCommand} from './command/GetInstallationsNearbyCommand';
 
 export interface InstallationFacade {
 
@@ -11,6 +12,15 @@ export interface InstallationFacade {
    *
    * @return list of installations found nearby provided location.
    */
-  getInstallationsByLocation(command: GetInstallationByLocationCommand): Observable<Installation[]>;
+  getInstallationsByLocation(command: GetInstallationsByLocationCommand): Observable<GetInstallationsResult>;
+
+  /**
+   * Returns Installations nearby user. Uses internal logic to get users current geolocation.
+   *
+   * @param command command query search params
+   *
+   * @return list of installations found nearby internally read location.
+   */
+  getNearbyInstallations(command: GetInstallationsNearbyCommand): Observable<GetInstallationsResult>;
 
 }
