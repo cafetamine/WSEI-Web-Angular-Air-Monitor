@@ -1,0 +1,22 @@
+<div class="content">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       xml:space="preserve"
+       style="shape-rendering:geometricPrecision;
+       text-rendering:geometricPrecision;
+       image-rendering:optimizeQuality;
+       fill-rule:evenodd;
+       clip-rule:evenodd"
+       viewBox="0 0 500 500">
+    <g id="UrTavla">
+      <circle style="fill:{{ index.color }};stroke:#010101;stroke-width:4;stroke-miterlimit:10;" cx="250" cy="250" r="245"></circle>
+      <text x="50%" y="50%"
+            font-size="6em"
+            text-anchor="middle"
+            dy=".3em">
+        {{ index.value }}
+      </text>
+    </g>
+  </svg>
+  <h5>{{ index.name }}</h5>
+  <p style="color: {{ index.color }}">{{ index.description }} {{ index.advice }}</p>
+</div>

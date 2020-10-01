@@ -1,0 +1,49 @@
+h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.measurement {
+  display: flex;
+  flex-direction: column;
+}
+
+.measurement-values {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 4em 1em 4em;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.measurement-values .measurement-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+}
+
+.measurement-indexes {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 4em 1em 4em;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.measurement-standards {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 4em 1em 4em;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.measurement-standards .measurement-standard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+}
