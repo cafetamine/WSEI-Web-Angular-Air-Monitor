@@ -67,7 +67,21 @@ npm install -g @angular/cli
 
 #### Configuration
 
-`TODO`
+Currently application requires to add [Airly API key](####Airly-API-key).
+Upon registering and receiving own key has to be provided in environment [config](./src/environments/environment.ts) instead of `XXX`:
+
+```ts
+export const environment = {
+  ...
+  client: {
+    airly: {
+      ...
+      apiKey: 'XXX'
+    }
+  }
+};
+
+```
 
 #### Compile
 
