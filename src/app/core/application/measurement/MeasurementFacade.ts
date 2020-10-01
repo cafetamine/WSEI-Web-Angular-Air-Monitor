@@ -1,6 +1,6 @@
 import {Observable} from 'rxjs';
-import {Measurement} from '../../domain/measurement/Measurement';
 import {GetMeasurementByInstallationIdCommand} from './command/GetMeasurementByInstallationIdCommand';
+import {GetMeasurementByInstallationIdResult} from './result/GetMeasurementByInstallationIdResult';
 
 export interface MeasurementFacade {
 
@@ -11,6 +11,6 @@ export interface MeasurementFacade {
    *
    * @return measurement for given installation
    */
-  getMeasurementByInstallationId(command: GetMeasurementByInstallationIdCommand): Observable<Measurement>;
+  getMeasurementByInstallationId(command: GetMeasurementByInstallationIdCommand): Observable<GetMeasurementByInstallationIdResult>;
 
 }
