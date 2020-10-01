@@ -1,6 +1,6 @@
 # WSEI-Web-Angular-Air-Monitor
 
-[![build status](https://github.com/cafetamine/WSEI-Web-Angular-AirMonitor/workflows/Build/badge.svg)](https://github.com/cafetamine/WSEI-Web-Angular-AirMonitor/actions)
+[![build status](https://github.com/cafetamine/WSEI-Web-Angular-Air-Monitor/workflows/Build/badge.svg)](https://github.com/cafetamine/WSEI-Web-Angular-AirMonitor/actions)
 
 ## Table of Contents
 
