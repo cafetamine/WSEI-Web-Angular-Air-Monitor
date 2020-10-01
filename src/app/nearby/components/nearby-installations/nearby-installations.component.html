@@ -1,5 +1,19 @@
 <div *ngIf="$result | async as result">
-  <div *ngIf="result.isSuccess">
+
+  <div>
+    <h3 style="color: orangered; margin: 0; padding: 0;"># TODO [future]</h3>
+    <p style="margin: 0; padding: 0;">
+      I'am not putting a lot of effort into this view.<br>
+      It is because I'am aiming at Google integration, where all of installations will be displayed on top of Google map as pins.
+    </p>
+
+    <h3 style="color: orangered; margin: 0; padding: 0;"># TODO [measurements]</h3>
+    <p style="margin: 0; padding: 0;">
+      Should fetch measurements, depending on general advice and air condition installation should resemble this status by color of border and background.
+    </p>
+  </div>
+
+  <div *ngIf="result.isSuccess" class="installation-container">
     <app-installation *ngFor="let installation of result.installations;" [installation]="installation"></app-installation>
   </div>
   <!-- TODO [error handling] global -->

@@ -1,10 +1,16 @@
-<div>
-  <ul>
-    <li>
-      <p>{{ installation.id }}</p>
-      <p> {{ installation.getLocationDisplayString() }} </p>
-    </li>
-    <li><app-address [address]="installation.address"></app-address></li>
-    <li><app-sponsor [sponsor]="installation.sponsor"></app-sponsor></li>
-  </ul>
+<div class="installation">
+  <div class="installation-card">
+    <p class="installation-highlight">{{ installation.id }}</p>
+    <p class="installation-detail">{{ installation.getLocationDisplayString() }}</p>
+  </div>
+  <div class="installation-card">
+    <p class="installation-highlight"><span>{{ installation.address.displayAddress2 }}</span></p>
+    <p class="installation-detail">{{ installation.address.displayAddress1 }}</p>
+  </div>
+  <div class="installation-card">
+    <div class="installation-highlight">
+      <img src="{{ installation.sponsor.logo }}" alt="W3Schools.com">
+    </div>
+    <a class="installation-detail" href="{{ installation.sponsor.link }}" target="_blank">{{ installation.sponsor.displayName }} </a>
+  </div>
 </div>
