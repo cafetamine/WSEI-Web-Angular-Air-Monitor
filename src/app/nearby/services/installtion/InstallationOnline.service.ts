@@ -16,35 +16,29 @@ export class InstallationOnlineService implements InstallationFacade {
   public constructor(private readonly _coordinatesService: CoordinatesService,
                      private readonly _client: AirlyClientService) { }
 
-   public getNearbyInstallations(command: GetInstallationsNearbyCommand): Observable<GetInstallationsResult> {
-     if (!command.isValid()) {
-       return of(GetInstallationsResult.FailureInternal(InstallationError.InvalidCommandInput));
-     }
-     return this._coordinatesService.getCurrentCoordinates()
-                .pipe(flatMap(coordinatesReadResult => {
-                  if (coordinatesReadResult.isSuccess()) {
-                    const coordinates = coordinatesReadResult.getCoordinates();
-                    return this.getInstallationsByLocation(command.withCoordinates(coordinates));
-                  } else {
-                    // TODO use coordinates error instead
-                   return of(GetInstallationsResult.FailureInternal(InstallationError.GeolocationRead));
-                  }
-                }));
-   }
-
-  public getInstallationsByLocation(command: GetInstallationsByLocationCommand): Observable<GetInstallationsResult> {
-    if (!command.isValid()) {
-      return of(GetInstallationsResult.FailureInternal(InstallationError.InvalidCommandInput));
-    }
-    // TODO failures
-    return this._client.fetchNearestInstallations(command.latitude, command.longitude, command.radius, command.limit)
-               .pipe(map(httpResult => {
-                   return GetInstallationsResult.Success(httpResult);
-                 })
-                 // TODO handle api errors - there or in client?
-                 // TODO check for null or empty responses - mby redirects?
-                 // TODO DTO
-               );
+  public getNearbyInstallations(command: GetInstallationsNearbyCommand): Observable<GetInstallationsResult> {
+    return command.isValid()
+         ? this._coordinatesService.getCurrentCoordinates()
+                                   .pipe(flatMap(coordinatesReadResult => {
+                                     if (coordinatesReadResult.isSuccess()) {
+                                       const coordinates = coordinatesReadResult.getCoordinates();
+                                       return this.getInstallationsByLocation(command.withCoordinates(coordinates));
+                                     } else {
+                                       // TODO use coordinates error instead
+                                       return of(GetInstallationsResult.FailureInternal(InstallationError.GeolocationRead));
+                                     }
+                                   }))
+         : of(GetInstallationsResult.FailureInternal(InstallationError.InvalidCommandInput));
   }
 
+  public getInstallationsByLocation(command: GetInstallationsByLocationCommand): Observable<GetInstallationsResult> {
+    return command.isValid()
+         ? this._client.fetchNearestInstallations(command.latitude, command.longitude, command.radius, command.limit)
+                       .pipe(map(GetInstallationsResult.Success)
+                         // TODO handle api errors - there or in client?
+                         // TODO check for null or empty responses - mby redirects?
+                         // TODO DTO
+                       )
+         : of(GetInstallationsResult.FailureInternal(InstallationError.InvalidCommandInput));
+  }
 }

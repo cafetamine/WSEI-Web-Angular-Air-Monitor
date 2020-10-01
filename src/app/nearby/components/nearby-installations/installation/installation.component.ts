@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Installation} from '../../../../core/domain/installation/Installation';
+import {MeasurementOnlineService} from '../../../services/measurement/MeasurementOnline.service';
+import {Observable} from 'rxjs';
+import {GetMeasurementByInstallationIdResult} from '../../../../core/application/measurement/result/GetMeasurementByInstallationIdResult';
+import {GetMeasurementByInstallationIdCommand} from '../../../../core/application/measurement/command/GetMeasurementByInstallationIdCommand';
 
 @Component({
   selector: 'app-installation',
@@ -14,8 +18,12 @@ export class InstallationComponent implements OnInit {
   @Input()
   public installation: Installation;
 
-  public constructor() { }
+  public $result: Observable<GetMeasurementByInstallationIdResult>;
 
-  public ngOnInit(): void { }
+  public constructor(private readonly _service: MeasurementOnlineService) { }
+
+  public ngOnInit(): void {
+    this.$result = this._service.getMeasurementByInstallationId(GetMeasurementByInstallationIdCommand.Create(this.installation.id));
+  }
 
 }
