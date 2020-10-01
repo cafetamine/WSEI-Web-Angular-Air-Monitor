@@ -1,0 +1,76 @@
+.installation-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  width: 800px;
+  margin: 0 1em 1em;
+  padding: 1em;
+  line-height: 24px;
+}
+
+.installation {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.measurement {
+  display: flex;
+  flex-direction: column;
+}
+
+.installation .installation-card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.installation .installation-card .installation-highlight {
+  flex: 2 1 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.installation .installation-card .installation-detail {
+  flex: 1 1 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.installation .installation-card .installation-highlight img {
+  max-height: 3em;
+  width: auto;
+  object-fit: cover;
+}
+
+.installation .installation-card a.installation-detail {
+  text-decoration: none;
+  color: inherit;
+}
+
+.installation .installation-card a.installation-detail:hover {
+  text-decoration: none;
+  color: #ff4500;
+}
+
+.details_button {
+  cursor: pointer;
+  height: 2em;
+  max-width: 20em;
+  align-self: center;
+  margin: 1em  0 0 0;
+  /*border: none;*/
+  /*background-color: inherit;*/
+  /*color: #ff4500;*/
+}

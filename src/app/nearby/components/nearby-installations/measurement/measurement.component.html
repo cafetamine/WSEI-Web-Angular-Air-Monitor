@@ -1,0 +1,23 @@
+<div class="measurement">
+  <h4>Measurement Indexes</h4>
+  <div class="measurement-indexes">
+    <app-measurement-index *ngFor="let index of measurement.current.indexes"
+                           [index]="index"
+                           class="measurement-value">
+    </app-measurement-index>
+  </div>
+  <h4>Measurement Values</h4>
+  <div class="measurement-values">
+      <app-measurement-value *ngFor="let value of measurement.current.values"
+                             [value]="value"
+                             class="measurement-value">
+      </app-measurement-value>
+  </div>
+  <h4>Measurement Standards</h4>
+  <div class="measurement-standards">
+    <app-measurement-standard *ngFor="let standard of measurement.current.standards"
+                              [standard]="standard"
+                              class="measurement-standard">
+    </app-measurement-standard>
+  </div>
+</div>
